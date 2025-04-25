@@ -1,0 +1,21 @@
+-- Your SQL goes here
+CREATE TABLE ledgers (
+    id SERIAL PRIMARY KEY,
+    code VARCHAR(10) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    sort VARCHAR(10) NOT NULL,
+    kind VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE proceedings (
+    id SERIAL PRIMARY KEY,
+    cr_from INTEGER NOT NULL REFERENCES ledgers(id),
+    db_to INTEGER NOT NULL REFERENCES ledgers(id),
+    amount DOUBLE PRECISION NOT NULL,
+    narration TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
