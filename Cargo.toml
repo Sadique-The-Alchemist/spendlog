@@ -8,3 +8,5 @@ postgres = { version = "0.19", features = ["with-chrono-0_4"] }
 clap = { version = "4.5", features = ["derive"] }
 chrono = "0.4.40"
 dotenv = "0.15"
+thiserror = "2.0.12"
+dialoguer = "0.11"
